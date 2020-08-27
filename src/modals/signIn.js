@@ -70,19 +70,30 @@ const styles = theme => ({
 class SignIn extends React.Component {
     constructor(props) {
         super(props);
-        this.emailRef = React.createRef();
-        this.passwordRef = React.createRef();
 
         this.state = {
-            userAuthError: "",
+            emailVal: "",
+            passwordVal: "",
+            emailAuthError: "",
             passwordAuthError: ""
+        }
+    }
+
+    areFieldsFilled = () => {
+        return this.state.emailVal !== "" && this.state.passwordVal !== "" ? false : true
+    }
+
+    handleValidation = (event, authErrorType) => {
+        event.preventDefault();
+        if (this.state[authErrorType] !== "") {
+            this.setState({ [authErrorType]: "" })
         }
     }
 
     handleSignIn = async (event) => {
         event.preventDefault();
-        const email = this.emailRef.current.value
-        const password = this.passwordRef.current.value
+        const email = this.state.emailVal
+        const password = this.state.passwordVal
 
         try {
             if (email && password) {
@@ -94,7 +105,7 @@ class SignIn extends React.Component {
             console.log('error signing in', error);
             switch (error.code) {
                 case "UserNotFoundException":
-                    this.setState({ userAuthError: error.message })
+                    this.setState({ emailAuthError: error.message })
                     break;
                 case "NotAuthorizedException":
                     this.setState({ passwordAuthError: error.message })
@@ -118,7 +129,6 @@ class SignIn extends React.Component {
                 </Typography>
                     <form className={classes.form} noValidate>
                         <TextField
-                            inputRef={this.emailRef}
                             className={classes.textField}
                             variant="outlined"
                             margin="normal"
@@ -129,11 +139,12 @@ class SignIn extends React.Component {
                             name="email"
                             autoComplete="email"
                             autoFocus
-                            helperText={this.state.userAuthError}
+                            helperText={this.state.emailAuthError}
+                            onClick={(e) => (this.handleValidation(e, "emailAuthError"))}
+                            onChange={(e) => (this.setState({ emailVal: e.target.value }))}
                         >
                         </TextField>
                         <TextField
-                            inputRef={this.passwordRef}
                             className={classes.textField}
                             variant="outlined"
                             margin="normal"
@@ -145,6 +156,8 @@ class SignIn extends React.Component {
                             id="password"
                             autoComplete="current-password"
                             helperText={this.state.passwordAuthError}
+                            onClick={(e) => (this.handleValidation(e, "passwordAuthError"))}
+                            onChange={(e) => (this.setState({ passwordVal: e.target.value }))}
                         />
                         <Button
                             type="submit"
@@ -152,6 +165,7 @@ class SignIn extends React.Component {
                             variant="contained"
                             className={classes.submit}
                             onClick={(e) => (this.handleSignIn(e))}
+                            disabled={this.areFieldsFilled()}
                         >
                             Sign In
                         </Button>
