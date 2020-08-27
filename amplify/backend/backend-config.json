@@ -1,24 +1,6 @@
 {
-	"api": {
-		"clankPI": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"authConfig": {
-					"defaultAuthentication": {
-						"authenticationType": "API_KEY",
-						"apiKeyConfig": {
-							"apiKeyExpirationDays": 7,
-							"description": "API for clank"
-						}
-					},
-					"additionalAuthenticationProviders": []
-				}
-			}
-		}
-	},
 	"auth": {
-		"clankfb0c33f1": {
+		"clank9f677e51": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
