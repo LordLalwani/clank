@@ -103,7 +103,6 @@ class SignIn extends React.Component {
                 this.props.history.push("/dashboard")
             }
         } catch (error) {
-            console.log('error signing in', error);
             switch (error.code) {
                 case "UserNotFoundException":
                     this.setState({ emailAuthError: error.message })
@@ -126,7 +125,7 @@ class SignIn extends React.Component {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Welcome To Clank
+                        Sign Into Clank
                 </Typography>
                     <form className={classes.form} noValidate>
                         <TextField
@@ -172,12 +171,12 @@ class SignIn extends React.Component {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link href="#" variant="body2" className={classes.link}>
+                                <Link href="/password-recovery" variant="body2" className={classes.link}>
                                     Forgot password?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2" className={classes.link}>
+                                <Link href="/sign-up" variant="body2" className={classes.link}>
                                     Sign Up
                                 </Link>
                             </Grid>

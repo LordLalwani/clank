@@ -1,10 +1,12 @@
 /* src/App.js */
 import Amplify from 'aws-amplify';
 import React from 'react';
-import awsExports from "./aws-exports";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignIn from './auth/signIn';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Dashboard from "./components/dashboard"
+import awsExports from "./aws-exports";
+import Dashboard from "./components/dashboard";
+import SignUp from './auth/signUp';
+import PasswordRecovery from './auth/passwordRecovery';
 
 Amplify.configure(awsExports);
 
@@ -16,6 +18,9 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path={"/"} render={props => (<SignIn {...props} />)} />
           <Route exact path={"/dashboard"} component={Dashboard} />
+          <Route exact path={"/password-recovery"} component={PasswordRecovery} />
+          <Route exact path={"/sign-in"} component={SignIn} />
+          <Route exact path={"/sign-up"} component={SignUp} />
         </Switch>
       </BrowserRouter>
     )
