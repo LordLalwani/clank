@@ -80,7 +80,9 @@ class SignUp extends React.Component {
             passwordAuthError: "",
             ConfirmPasswordAuthError: "",
             emailCodeVal: "",
-            verifyButtonBeenClicked: false
+            verifyButtonBeenClicked: false,
+            errorExists: false,
+            emailSent: false
         }
     }
 
@@ -89,7 +91,7 @@ class SignUp extends React.Component {
     }
 
     doPasswordsMatch = () => {
-        return this.state.passwordVal !== "" && this.state.ConfirmPasswordVal !== "" && this.state.passwordVal === this.state.ConfirmPasswordVal ? true : false
+        return this.state.passwordVal === this.state.ConfirmPasswordVal ? true : false
     }
 
     canSubmitForVerification = () => {
@@ -101,15 +103,23 @@ class SignUp extends React.Component {
         if (this.state[authErrorType] !== "") {
             this.setState({ [authErrorType]: "" })
         }
+        this.setState({errorExists: false})
     }
 
     handleCodeConfirmation = async (e) => {
         e.preventDefault();
         try {
             await Auth.confirmSignUp(this.state.emailVal, this.state.emailCodeVal);
-          } catch (error) {
-              console.log('error confirming sign up', error);
-          }
+        } catch (error) {
+            this.setState({codeConfirmError: error.message})
+            console.log('error confirming sign up', error);
+        }
+    }
+
+    displayPasswordsMatch = () => {
+        if(this.state.passwordVal.length > 0 && this.state.ConfirmPasswordVal.length>0 && !this.doPasswordsMatch()) {
+            return true
+        }
     }
 
     handleSignUp = async (event) => {
@@ -123,15 +133,28 @@ class SignUp extends React.Component {
                 username,
                 password,
             });
+            //do something
             console.log(user);
+            this.setState({emailSent: true})
+
         } catch (error) {
-            console.log(error)
+            console.error(error)
+            this.setState({errorExists: true})
             switch (error.code) {
                 case "UserNotFoundException":
                     this.setState({ emailAuthError: error.message })
                     break;
                 case "NotAuthorizedException":
-                    this.setState({ passwordAuthError: error.message })
+                    this.setState({ ConfirmPasswordAuthError: error.message })
+                    break;
+                case "InvalidParameterException":
+                    this.setState({ ConfirmPasswordAuthError: error.message })
+                    break;
+                case "UsernameExistsException": 
+                    this.setState({ emailAuthError: error.message })
+                    break;
+                    case "InvalidPasswordException": 
+                    this.setState({ ConfirmPasswordAuthError: "Password needs to be a minimum of 8 character" })
                     break;
                 default:
             }
@@ -178,7 +201,6 @@ class SignUp extends React.Component {
                             type="password"
                             id="password"
                             autoComplete="current-password"
-                            helperText={this.state.passwordAuthError}
                             onClick={(e) => (this.handleValidation(e, "passwordAuthError"))}
                             onChange={(e) => (this.setState({ passwordVal: e.target.value }))}
                         />
@@ -193,11 +215,11 @@ class SignUp extends React.Component {
                             type="password"
                             id="password"
                             autoComplete="current-password"
-                            helperText={this.state.passwordAuthError}
+                            helperText={this.state.ConfirmPasswordAuthError}
                             onClick={(e) => (this.handleValidation(e, "ConfirmPasswordAuthError"))}
                             onChange={(e) => (this.setState({ ConfirmPasswordVal: e.target.value }))}
                         />
-                        {this.doPasswordsMatch() ? (<div>yee</div>) : (<div>nah</div>)}
+                        {this.displayPasswordsMatch() ? (<div style={{color:"red"}}>Passwords don't match</div>): (null)}
                         <Button
                             type="submit"
                             fullWidth
@@ -208,7 +230,7 @@ class SignUp extends React.Component {
                         >
                             Verify My Email
                         </Button>
-                        {this.state.verifyButtonBeenClicked ? (
+                        {this.state.verifyButtonBeenClicked && this.state.emailSent? (
                             <Grid container spacing={3}>
                                 <Grid item xs={6}>
                                     <TextField
@@ -222,8 +244,9 @@ class SignUp extends React.Component {
                                         name="code"
                                         autoComplete="code"
                                         autoFocus
-                                        helperText={this.state.emailAuthError}
+                                        helperText={this.state.codeConfirmError}
                                         onChange={(e) => (this.setState({ emailCodeVal: e.target.value }))}
+                                        onClick={(e) => (this.handleValidation(e, "codeConfirmError"))}
                                     />
                                 </Grid>
                                 <Grid item xs={6}>
