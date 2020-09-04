@@ -110,6 +110,7 @@ class SignUp extends React.Component {
         e.preventDefault();
         try {
             await Auth.confirmSignUp(this.state.emailVal, this.state.emailCodeVal);
+            this.props.history.push("/sign-in")
         } catch (error) {
             this.setState({codeConfirmError: error.message})
             console.log('error confirming sign up', error);
