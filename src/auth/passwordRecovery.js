@@ -87,6 +87,8 @@ class PasswordRecovery extends React.Component {
         const email = this.state.emailVal
         try {
             if (email) {
+                // TODO save user data to redux
+                // eslint-disable-next-line
                 const user = await Auth.forgotPassword(email);
                 this.setState({ emailSent: true })
             }
