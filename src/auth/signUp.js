@@ -12,20 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
 import { default as React } from 'react';
-
-// TODO: Remove and replace with utils method
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Clank
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import Copyright from "../components/common/copyright"
 
 const styles = theme => ({
     paper: {
