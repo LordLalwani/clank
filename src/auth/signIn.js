@@ -16,7 +16,6 @@ import Copyright from "../components/common/copyright"
 
 const styles = theme => ({
     paper: {
-        marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -94,72 +93,74 @@ class SignIn extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Container component="main" maxWidth="xs">
-                <CssBaseline />
-                <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign Into Clank
+            <div style={{ alignItems: "center", display: "flex", height: "100vh" }}>
+                <Container component="main" maxWidth="xs">
+                    <CssBaseline />
+                    <div className={classes.paper}>
+                        <Avatar className={classes.avatar}>
+                            <LockOutlinedIcon />
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Sign Into Clank
                 </Typography>
-                    <form className={classes.form} noValidate>
-                        <Textfield
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
-                            autoFocus
-                            helperText={this.state.emailAuthError}
-                            onClick={(e) => (this.handleValidation(e, "emailAuthError"))}
-                            onChange={(e) => (this.setState({ emailVal: e.target.value }))}
-                        />
-                        <Textfield
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            name="password"
-                            label="Password"
-                            type="password"
-                            id="password"
-                            autoComplete="current-password"
-                            helperText={this.state.passwordAuthError}
-                            onClick={(e) => (this.handleValidation(e, "passwordAuthError"))}
-                            onChange={(e) => (this.setState({ passwordVal: e.target.value }))}
-                        />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            className={classes.submit}
-                            onClick={(e) => (this.handleSignIn(e))}
-                            disabled={this.areFieldsFilled()}
-                        >
-                            Sign In
+                        <form className={classes.form} noValidate>
+                            <Textfield
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="email"
+                                label="Email Address"
+                                name="email"
+                                autoComplete="email"
+                                autoFocus
+                                helperText={this.state.emailAuthError}
+                                onClick={(e) => (this.handleValidation(e, "emailAuthError"))}
+                                onChange={(e) => (this.setState({ emailVal: e.target.value }))}
+                            />
+                            <Textfield
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="password"
+                                label="Password"
+                                type="password"
+                                id="password"
+                                autoComplete="current-password"
+                                helperText={this.state.passwordAuthError}
+                                onClick={(e) => (this.handleValidation(e, "passwordAuthError"))}
+                                onChange={(e) => (this.setState({ passwordVal: e.target.value }))}
+                            />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                className={classes.submit}
+                                onClick={(e) => (this.handleSignIn(e))}
+                                disabled={this.areFieldsFilled()}
+                            >
+                                Sign In
                         </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="/password-recovery" variant="body2" className={classes.link}>
-                                    Forgot password?
+                            <Grid container>
+                                <Grid item xs>
+                                    <Link href="/password-recovery" variant="body2" className={classes.link}>
+                                        Forgot password?
                                 </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="/sign-up" variant="body2" className={classes.link}>
-                                    Sign Up
+                                </Grid>
+                                <Grid item>
+                                    <Link href="/sign-up" variant="body2" className={classes.link}>
+                                        Sign Up
                                 </Link>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </form>
-                </div>
-                <Box mt={8}>
-                    <Copyright />
-                </Box>
-            </Container>
+                        </form>
+                    </div>
+                    <Box mt={8}>
+                        <Copyright />
+                    </Box>
+                </Container>
+            </div>
         )
     }
 }
