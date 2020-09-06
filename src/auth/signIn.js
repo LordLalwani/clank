@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import Textfield from "../components/themed/textfield"
 import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Auth } from 'aws-amplify';
@@ -28,19 +28,6 @@ const styles = theme => ({
     form: {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
-    },
-    textField: {
-        '& .MuiOutlinedInput-root': {
-            '&.Mui-focused fieldset': {
-                borderColor: '#404040',
-            },
-        },
-        '& label.Mui-focused': {
-            color: '#ffa500',
-        },
-        '& .MuiFormHelperText-root': {
-            color: 'red',
-        }
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
@@ -91,6 +78,7 @@ class SignIn extends React.Component {
                 this.props.history.push("/dashboard")
             }
         } catch (error) {
+            console.error(error.message)
             switch (error.code) {
                 case "UserNotFoundException":
                     this.setState({ emailAuthError: error.message })
@@ -116,8 +104,7 @@ class SignIn extends React.Component {
                         Sign Into Clank
                 </Typography>
                     <form className={classes.form} noValidate>
-                        <TextField
-                            className={classes.textField}
+                        <Textfield
                             variant="outlined"
                             margin="normal"
                             required
@@ -130,10 +117,8 @@ class SignIn extends React.Component {
                             helperText={this.state.emailAuthError}
                             onClick={(e) => (this.handleValidation(e, "emailAuthError"))}
                             onChange={(e) => (this.setState({ emailVal: e.target.value }))}
-                        >
-                        </TextField>
-                        <TextField
-                            className={classes.textField}
+                        />
+                        <Textfield
                             variant="outlined"
                             margin="normal"
                             required
