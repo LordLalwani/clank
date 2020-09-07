@@ -2,11 +2,11 @@
 import Amplify from 'aws-amplify';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SignIn from './auth/signIn';
+import PasswordRecovery from './components/auth/passwordRecovery';
+import SignIn from './components/auth/signIn';
+import SignUp from './components/auth/signUp';
 import awsExports from "./aws-exports";
 import Dashboard from "./components/dashboard";
-import SignUp from './auth/signUp';
-import PasswordRecovery from './auth/passwordRecovery';
 
 Amplify.configure(awsExports);
 
