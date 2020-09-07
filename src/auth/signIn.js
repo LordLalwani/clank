@@ -13,6 +13,7 @@ import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
 import { default as React } from 'react';
 import Copyright from "../components/common/copyright"
+import AuthPortal from "./authPortal"
 
 const styles = theme => ({
     paper: {
@@ -93,7 +94,7 @@ class SignIn extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <div style={{ alignItems: "center", display: "flex", height: "100vh" }}>
+            <AuthPortal>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
                     <div className={classes.paper}>
@@ -160,7 +161,7 @@ class SignIn extends React.Component {
                         <Copyright />
                     </Box>
                 </Container>
-            </div>
+            </AuthPortal>
         )
     }
 }

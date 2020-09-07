@@ -13,6 +13,7 @@ import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
 import { default as React } from 'react';
 import Copyright from "../components/common/copyright"
+import AuthPortal from "./authPortal"
 
 const styles = theme => ({
     paper: {
@@ -152,6 +153,7 @@ class SignUp extends React.Component {
     render() {
         const { classes } = this.props;
         return (
+            <AuthPortal>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <div className={classes.paper}>
@@ -266,7 +268,7 @@ class SignUp extends React.Component {
                     <Copyright />
                 </Box>
             </Container>
-        )
+            </AuthPortal>)
     }
 }
 SignUp.propTypes = {
