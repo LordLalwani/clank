@@ -6,13 +6,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
-import Textfield from "../components/themed/textfield"
+import Textfield from "../themed/textfield"
 import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
 import { default as React } from 'react';
-import Copyright from "../components/common/copyright"
+import Copyright from "../common/copyright"
 import AuthPortal from "./authPortal"
 
 const styles = theme => ({
