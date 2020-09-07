@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Auth } from 'aws-amplify';
 import PropTypes from 'prop-types';
-import { default as React } from 'react';
+import React from 'react';
 import Copyright from "../common/copyright"
 import AuthPortal from "./authPortal"
 
