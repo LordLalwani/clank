@@ -1,6 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import Button from "../themed/button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -41,14 +41,6 @@ const styles = (theme) => ({
     },
     "& .MuiFormHelperText-root": {
       color: "red",
-    },
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#ffa500",
-    "&:hover": {
-      backgroundColor: "#404040",
-      color: "#ffa500",
     },
   },
   link: {
@@ -231,7 +223,6 @@ class SignUp extends React.Component {
                 type="submit"
                 fullWidth
                 variant="contained"
-                className={classes.submit}
                 onClick={(e) => this.handleSignUp(e)}
                 disabled={!this.canSubmitForVerification()}
               >
@@ -265,7 +256,6 @@ class SignUp extends React.Component {
                       type="submit"
                       fullWidth
                       variant="contained"
-                      className={classes.submit}
                       onClick={(e) => this.handleCodeConfirmation(e)}
                     >
                       Confirm

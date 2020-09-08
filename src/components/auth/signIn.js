@@ -29,14 +29,6 @@ const styles = (theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#ffa500",
-    "&:hover": {
-      backgroundColor: "#404040",
-      color: "#ffa500",
-    },
-  },
   link: {
     color: "black",
   },
@@ -139,7 +131,6 @@ class SignIn extends React.Component {
                 type="submit"
                 fullWidth
                 variant="contained"
-                className={classes.submit}
                 onClick={(e) => this.handleSignIn(e)}
                 disabled={this.areFieldsFilled()}
               >

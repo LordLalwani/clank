@@ -1,6 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import Button from "../themed/button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -43,14 +43,6 @@ const styles = (theme) => ({
       color: "red",
     },
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#ffa500",
-    "&:hover": {
-      backgroundColor: "#404040",
-      color: "#ffa500",
-    },
-  },
   link: {
     color: "black",
   },
@@ -82,7 +74,8 @@ class PasswordRecovery extends React.Component {
         this.setState({ emailSent: true });
       }
     } catch (error) {
-      console.log(error);
+      console.error(error.message);
+      this.setState({ emailAuthError: error.message });
     }
   };
 
@@ -97,7 +90,7 @@ class PasswordRecovery extends React.Component {
       this.props.history.push("/sign-in");
     } catch (error) {
       this.setState({ codeConfirmError: error.message });
-      console.log("error confirming sign up", error);
+      console.log("error on password recovery", error);
     }
   };
 
@@ -144,11 +137,10 @@ class PasswordRecovery extends React.Component {
                 type="submit"
                 fullWidth
                 variant="contained"
-                className={classes.submit}
                 onClick={(e) => this.handlePasswordRecovery(e)}
                 disabled={this.areFieldsFilled()}
               >
-                Sign In
+                Email me a recovery code
               </Button>
               {this.state.verifyButtonBeenClicked && this.state.emailSent ? (
                 <Grid>
@@ -198,7 +190,6 @@ class PasswordRecovery extends React.Component {
                         type="submit"
                         fullWidth
                         variant="contained"
-                        className={classes.submit}
                         onClick={(e) => this.handleCodeConfirmation(e)}
                       >
                         Confirm New Password
