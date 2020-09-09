@@ -104,7 +104,7 @@ class SignIn extends React.Component {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="email-textfield"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -121,7 +121,7 @@ class SignIn extends React.Component {
                 name="password"
                 label="Password"
                 type="password"
-                id="password"
+                id="password-textfield"
                 autoComplete="current-password"
                 helperText={this.state.passwordAuthError}
                 onClick={(e) => this.handleValidation(e, "passwordAuthError")}
@@ -129,6 +129,7 @@ class SignIn extends React.Component {
               />
               <Button
                 type="submit"
+                id="sign-in-submit-button"
                 fullWidth
                 variant="contained"
                 onClick={(e) => this.handleSignIn(e)}
