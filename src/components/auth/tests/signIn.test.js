@@ -36,7 +36,7 @@ it("renders the signIn and all sub components correctly", () => {
   expect(signInSubmitButton).toBeTruthy();
 });
 
-describe("functionality tests", () => {
+describe("Behavior tests", () => {
   it("Should disable the sign in button when email and password fields are empty", () => {
     fireEvent.change(emailTextField, { target: { value: "" } });
     expect(emailTextField.value).toBe("");
@@ -49,26 +49,31 @@ describe("functionality tests", () => {
 
   it("should remove error messages upon clicking on textFields", () => {
     Auth.signIn = jest.fn().mockImplementation(() => {
-      const errorObj = {
-        code: "UserNotFoundException",
-        name: "UserNotFoundException",
-        message: "User does not exist.",
-      };
-      throw new Error(errorObj);
+      //TODO: move to test.utils
+      function amplifySignInError() {
+        this.code = "UserNotFoundException";
+        this.name = "UserNotFoundException";
+        this.message = "User does not exist.";
+      }
+      amplifySignInError.prototype = Error.prototype;
+      throw new amplifySignInError();
     });
 
-    fireEvent.change(emailTextField, {
-      target: { value: "triggerValidation" },
-    });
-    expect(emailTextField.value).toBe("triggerValidation");
-
+    // populates textFields to make sign in button clickable (not disabled)
+    fireEvent.change(emailTextField, { target: { value: "testUser" } });
+    expect(emailTextField.value).toBe("testUser");
     fireEvent.change(passwordTextField, { target: { value: "123456" } });
     expect(passwordTextField.value).toBe("123456");
 
     expect(signInSubmitButton).not.toHaveAttribute("disabled");
-    fireEvent.click(signInSubmitButton);
 
-    //LAST UPDATE: this test goes to the mock implementation of auth.signup but I think im throwing the error incorrectly
-    //it doesn't seem to be working on the component catch error side =[
+    // clicks submit button which mocks auth.signIn implementation and throws amplifySignInError
+    // this simulates the textField helperText value being the amplifySignInError.message
+    fireEvent.click(signInSubmitButton);
+    expect(DOM.queryByText("User does not exist.")).toBeTruthy();
+
+    // clicks textfield to clear helperText
+    fireEvent.click(emailTextField);
+    expect(DOM.queryByText("User does not exist.")).not.toBeTruthy();
   });
 });
