@@ -9,6 +9,7 @@ import Signin from "../signIn";
 
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "../../../aws-exports";
+import renderer from "react-test-renderer";
 
 Amplify.configure(awsconfig);
 
@@ -19,25 +20,34 @@ let DOM;
 let emailTextField;
 let passwordTextField;
 let signInSubmitButton;
+
 beforeEach(() => {
   DOM = render(<Signin />);
   emailTextField = getById(DOM.container, "email-textfield");
   passwordTextField = getById(DOM.container, "password-textfield");
   signInSubmitButton = getById(DOM.container, "sign-in-submit-button");
 });
-it("renders the signIn and all sub components correctly", () => {
-  const emailTextField = getById(DOM.container, "email-textfield");
-  expect(emailTextField).toBeTruthy();
 
-  const passwordTextField = getById(DOM.container, "password-textfield");
-  expect(passwordTextField).toBeTruthy();
+describe("render tests", () => {
+  it("should render all sub components correctly", () => {
+    const emailTextField = getById(DOM.container, "email-textfield");
+    expect(emailTextField).toBeTruthy();
 
-  const signInSubmitButton = getById(DOM.container, "sign-in-submit-button");
-  expect(signInSubmitButton).toBeTruthy();
+    const passwordTextField = getById(DOM.container, "password-textfield");
+    expect(passwordTextField).toBeTruthy();
+
+    const signInSubmitButton = getById(DOM.container, "sign-in-submit-button");
+    expect(signInSubmitButton).toBeTruthy();
+  });
+
+  it("should render signIn component correctly", () => {
+    const tree = renderer.create(<Signin />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe("Behavior tests", () => {
-  it("Should disable the sign in button when email and password fields are empty", () => {
+  it("should disable the sign in button when email and password fields are empty", () => {
     fireEvent.change(emailTextField, { target: { value: "" } });
     expect(emailTextField.value).toBe("");
 
@@ -49,7 +59,6 @@ describe("Behavior tests", () => {
 
   it("should remove error messages upon clicking on textFields", () => {
     Auth.signIn = jest.fn().mockImplementation(() => {
-      //TODO: move to test.utils
       function amplifySignInError() {
         this.code = "UserNotFoundException";
         this.name = "UserNotFoundException";
