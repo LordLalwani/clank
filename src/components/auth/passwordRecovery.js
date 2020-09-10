@@ -124,7 +124,7 @@ class PasswordRecovery extends React.Component {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="email-textfield"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -136,6 +136,7 @@ class PasswordRecovery extends React.Component {
               <Button
                 type="submit"
                 fullWidth
+                id="email-button"
                 variant="contained"
                 onClick={(e) => this.handlePasswordRecovery(e)}
                 disabled={this.areFieldsFilled()}
@@ -153,8 +154,8 @@ class PasswordRecovery extends React.Component {
                     name="password"
                     label="New Password"
                     type="password"
-                    id="password"
-                    autoComplete="current-password"
+                    id="new-password-textfield"
+                    autoComplete="new-password-textfield"
                     onClick={(e) =>
                       this.handleValidation(e, "passwordAuthError")
                     }
@@ -171,10 +172,10 @@ class PasswordRecovery extends React.Component {
                         margin="normal"
                         required
                         fullWidth
-                        id="code"
+                        id="confirmation-code-textfield"
                         label="Confirm Code"
                         name="code"
-                        autoComplete="code"
+                        autoComplete="confirm-code-textfield"
                         autoFocus
                         helperText={this.state.codeConfirmError}
                         onChange={(e) =>
