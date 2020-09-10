@@ -256,6 +256,7 @@ class SignUp extends React.Component {
                     <Button
                       type="submit"
                       fullWidth
+                      id="confirmation-code-button"
                       variant="contained"
                       onClick={(e) => this.handleCodeConfirmation(e)}
                     >
