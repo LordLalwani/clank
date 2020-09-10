@@ -231,6 +231,9 @@ class PasswordRecovery extends React.Component {
 }
 PasswordRecovery.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
 };
 
 export default withStyles(styles)(PasswordRecovery);
