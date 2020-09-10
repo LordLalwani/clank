@@ -30,13 +30,8 @@ beforeEach(() => {
 
 describe("render tests", () => {
   it("should render all sub components correctly", () => {
-    const emailTextField = getById(DOM.container, "email-textfield");
     expect(emailTextField).toBeTruthy();
-
-    const passwordTextField = getById(DOM.container, "password-textfield");
     expect(passwordTextField).toBeTruthy();
-
-    const signInSubmitButton = getById(DOM.container, "sign-in-submit-button");
     expect(signInSubmitButton).toBeTruthy();
   });
 
