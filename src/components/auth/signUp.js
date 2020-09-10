@@ -124,7 +124,7 @@ class SignUp extends React.Component {
         username,
         password,
       });
-      //do something
+      //TODO perhaps push user to dashboard ? or store in redux?
       console.log(user);
       this.setState({ emailSent: true });
     } catch (error) {
@@ -174,7 +174,7 @@ class SignUp extends React.Component {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
+                id="email-textfield"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
@@ -192,7 +192,7 @@ class SignUp extends React.Component {
                 name="password"
                 label="Password"
                 type="password"
-                id="password"
+                id="password-textfield"
                 autoComplete="current-password"
                 onClick={(e) => this.handleValidation(e, "passwordAuthError")}
                 onChange={(e) => this.setState({ passwordVal: e.target.value })}
@@ -206,7 +206,7 @@ class SignUp extends React.Component {
                 name="Confirm Password"
                 label="Confirm Password"
                 type="password"
-                id="password"
+                id="confirm-password-textfield"
                 autoComplete="current-password"
                 helperText={this.state.ConfirmPasswordAuthError}
                 onClick={(e) =>
@@ -222,6 +222,7 @@ class SignUp extends React.Component {
               <Button
                 type="submit"
                 fullWidth
+                id="verify-email-button"
                 variant="contained"
                 onClick={(e) => this.handleSignUp(e)}
                 disabled={!this.canSubmitForVerification()}
@@ -237,7 +238,7 @@ class SignUp extends React.Component {
                       margin="normal"
                       required
                       fullWidth
-                      id="code"
+                      id="confirmation-code-textfield"
                       label="Confirm Code"
                       name="code"
                       autoComplete="code"
@@ -255,6 +256,7 @@ class SignUp extends React.Component {
                     <Button
                       type="submit"
                       fullWidth
+                      id="confirmation-code-button"
                       variant="contained"
                       onClick={(e) => this.handleCodeConfirmation(e)}
                     >
