@@ -17,10 +17,12 @@ import AuthPortal from "./authPortal";
 
 const styles = (theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "white",
+    padding: theme.spacing(4),
+    borderRadius: 10,
   },
   avatar: {
     margin: theme.spacing(1),
