@@ -7,7 +7,7 @@ import SignIn from "./components/auth/signIn";
 import SignUp from "./components/auth/signUp";
 import awsExports from "./aws-exports";
 import Dashboard from "./components/dashboard";
-import PrivateRoute from "./utils/privateRoute";
+import ProtectedRoute from "./utils/protectedRoute";
 import { connect } from "react-redux";
 import mapStateToProps from "./redux/mapStateToProps";
 import mapDispatchToProps from "./redux/mapDispatchToProps";
@@ -29,7 +29,7 @@ class App extends React.Component {
           <Route exact path="/password-recovery" component={PasswordRecovery} />
           <Route exact path="/sign-in" component={SignIn} />
           <Route exact path="/sign-up" component={SignUp} />
-          <PrivateRoute
+          <ProtectedRoute
             exact
             path="/dashboard"
             isAuthenticated={this.props.userState.isAuthenticated}
