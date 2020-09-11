@@ -7,7 +7,7 @@ import SignIn from "./components/auth/signIn";
 import SignUp from "./components/auth/signUp";
 import awsExports from "./aws-exports";
 import Dashboard from "./components/dashboard";
-import PrivateRoute from "./utils/PrivateRoute";
+import PrivateRoute from "./utils/privateRoute";
 
 Amplify.configure(awsExports);
 
