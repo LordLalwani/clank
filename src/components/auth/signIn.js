@@ -69,9 +69,9 @@ class SignIn extends React.Component {
 
     try {
       if (email && password) {
-        // TODO save user data to redux
-        // eslint-disable-next-line
-        const user = await Auth.signIn(email, password);
+        await Auth.signIn(email, password);
+        const user = await Auth.currentAuthenticatedUser();
+        await this.props.addUserToState(user.attributes);
         this.props.history.push("/dashboard");
       }
     } catch (error) {
