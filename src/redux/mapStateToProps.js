@@ -1,7 +1,7 @@
 // provides redux state
 const mapStateToProps = (state) => {
   return {
-    userState: state.user,
+    userState: state.userState,
   };
 };
 

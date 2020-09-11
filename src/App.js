@@ -32,8 +32,7 @@ class App extends React.Component {
           <PrivateRoute
             exact
             path="/dashboard"
-            //replace with state auth
-            isAuthenticated={false}
+            isAuthenticated={this.props.userState.isAuthenticated}
             component={Dashboard}
           />
         </Switch>
