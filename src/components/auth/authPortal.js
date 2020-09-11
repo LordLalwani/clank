@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 export default class AuthPortal extends React.Component {
@@ -9,3 +10,7 @@ export default class AuthPortal extends React.Component {
     );
   }
 }
+
+AuthPortal.propTypes = {
+  children: PropTypes.any,
+};

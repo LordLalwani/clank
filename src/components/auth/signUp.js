@@ -297,6 +297,9 @@ class SignUp extends React.Component {
 }
 SignUp.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
 };
 
 export default withStyles(styles)(SignUp);

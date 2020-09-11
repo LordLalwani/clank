@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import MaterialUiButton from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
@@ -29,5 +30,14 @@ class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  children: PropTypes.any,
+  classes: PropTypes.shape({
+    button: PropTypes.any,
+  }),
+  onChange: PropTypes.any,
+  onClick: PropTypes.any,
+};
 
 export default withStyles(styles)(Button);
