@@ -7,6 +7,7 @@ import SignIn from "./components/auth/signIn";
 import SignUp from "./components/auth/signUp";
 import awsExports from "./aws-exports";
 import Dashboard from "./components/dashboard";
+import PrivateRoute from "./utils/PrivateRoute";
 
 Amplify.configure(awsExports);
 
@@ -16,10 +17,16 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" render={(props) => <SignIn {...props} />} />
-          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/password-recovery" component={PasswordRecovery} />
           <Route exact path="/sign-in" component={SignIn} />
           <Route exact path="/sign-up" component={SignUp} />
+          <PrivateRoute
+            exact
+            path="/dashboard"
+            //replace with state auth
+            isAuthenticated={false}
+            component={Dashboard}
+          />
         </Switch>
       </BrowserRouter>
     );
