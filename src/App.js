@@ -27,8 +27,20 @@ class App extends React.Component {
             )}
           />
           <Route exact path="/password-recovery" component={PasswordRecovery} />
-          <Route exact path="/sign-in" component={SignIn} />
-          <Route exact path="/sign-up" component={SignUp} />
+          <Route
+            exact
+            path="/sign-in"
+            render={(routerProps) => (
+              <SignIn {...routerProps} {...this.props} />
+            )}
+          />
+          <Route
+            exact
+            path="/sign-up"
+            render={(routerProps) => (
+              <SignUp {...routerProps} {...this.props} />
+            )}
+          />
           <ProtectedRoute
             exact
             path="/dashboard"
