@@ -98,6 +98,10 @@ class SignUp extends React.Component {
     e.preventDefault();
     try {
       await Auth.confirmSignUp(this.state.emailVal, this.state.emailCodeVal);
+
+      await Auth.signIn(this.state.emailVal, this.state.passwordVal);
+      const user = await Auth.currentAuthenticatedUser();
+      await this.props.addUserToState(user.attributes);
       this.props.history.push("/sign-in");
     } catch (error) {
       this.setState({ codeConfirmError: error.message });
@@ -122,12 +126,10 @@ class SignUp extends React.Component {
     this.setState({ verifyButtonBeenClicked: true });
 
     try {
-      const { user } = await Auth.signUp({
+      await Auth.signUp({
         username,
         password,
       });
-      //TODO perhaps push user to dashboard ? or store in redux?
-      console.log(user);
       this.setState({ emailSent: true });
     } catch (error) {
       console.error(error);
