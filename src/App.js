@@ -44,7 +44,9 @@ class App extends React.Component {
           <ProtectedRoute
             exact
             path="/dashboard"
-            isAuthenticated={this.props.userState.isAuthenticated}
+            isAuthenticated={true}
+            // revert below line
+            // isAuthenticated={this.props.userState.isAuthenticated}
             component={DashboardLayout}
           />
         </Switch>

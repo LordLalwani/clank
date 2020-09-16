@@ -2,7 +2,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import DashboardNav from "./dashboardNav";
 import Dashboard from "./dashboard";
-
 export default class DashboardLayout extends React.Component {
   render() {
     return (
