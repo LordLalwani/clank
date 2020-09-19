@@ -5,7 +5,7 @@ export default class DashboardNavController extends React.Component {
   render() {
     return (
       <div>
-        <DashboardNavDrawer />
+        <DashboardNavDrawer {...this.props} />
       </div>
     );
   }
