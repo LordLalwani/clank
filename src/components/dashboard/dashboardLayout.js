@@ -1,19 +1,17 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import DashboardNav from "./dashboardNav";
-import Dashboard from "./dashboard";
+import { BrowserView, MobileView } from "react-device-detect";
+import DashboardBrowserView from "./views/dashboardBrowserView";
+import DashboardMobileView from "./views/dashboardMobileView";
 export default class DashboardLayout extends React.Component {
   render() {
     return (
       <div>
-        <Grid container wrap={"nowrap"}>
-          <Grid item xs={2}>
-            <DashboardNav />
-          </Grid>
-          <Grid item xs={10} alignItems={"stretch"}>
-            <Dashboard />
-          </Grid>
-        </Grid>
+        <BrowserView>
+          <DashboardBrowserView />
+        </BrowserView>
+        <MobileView>
+          <DashboardMobileView />
+        </MobileView>
       </div>
     );
   }
