@@ -1,7 +1,6 @@
-import Grid from "@material-ui/core/Grid";
 import React, { Component } from "react";
-import Dashboard from "../components/dashboard";
-import DashboardNav from "../components/dashboardNav";
+import DashboardController from "../components/dashboardController";
+import DashboardNavController from "../components/dashboardNavController";
 
 class dashboardBrowserView extends Component {
   constructor(props) {
@@ -10,15 +9,9 @@ class dashboardBrowserView extends Component {
   }
   render() {
     return (
-      <div>
-        <Grid container wrap={"nowrap"}>
-          <Grid item xs={2}>
-            <DashboardNav />
-          </Grid>
-          <Grid item xs={10} alignItems={"stretch"}>
-            <Dashboard />
-          </Grid>
-        </Grid>
+      <div style={{ display: "flex" }}>
+        <DashboardNavController />
+        <DashboardController />
       </div>
     );
   }

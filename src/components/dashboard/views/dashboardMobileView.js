@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DashboardController from "../components/dashboardController";
+import DashboardNavController from "../components/dashboardNavController";
 
 class dashboardMobileView extends Component {
   constructor(props) {
@@ -7,8 +9,9 @@ class dashboardMobileView extends Component {
   }
   render() {
     return (
-      <div>
-        <p>test</p>
+      <div style={{ display: "flex" }}>
+        <DashboardNavController />
+        <DashboardController />
       </div>
     );
   }
