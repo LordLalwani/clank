@@ -48,6 +48,7 @@ class App extends React.Component {
             // revert below line
             // isAuthenticated={this.props.userState.isAuthenticated}
             component={DashboardRootController}
+            {...this.props}
           />
         </Switch>
       </BrowserRouter>
