@@ -2,6 +2,7 @@
 const mapStateToProps = (state) => {
   return {
     userState: state.userState,
+    applicationState: state.applicationState,
   };
 };
 

@@ -1,7 +1,7 @@
 import { cleanup } from "@testing-library/react";
 import React from "react";
 import renderer from "react-test-renderer";
-import DashboardLayout from "../DashboardLayout";
+import DashboardLayout from "../dashboardRootController";
 
 afterEach(cleanup);
 

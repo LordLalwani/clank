@@ -6,7 +6,7 @@ import PasswordRecovery from "./components/auth/passwordRecovery";
 import SignIn from "./components/auth/signIn";
 import SignUp from "./components/auth/signUp";
 import awsExports from "./aws-exports";
-import DashboardLayout from "./components/dashboard/dashboardLayout";
+import DashboardRootController from "./components/dashboard/dashboardRootController";
 import ProtectedRoute from "./utils/protectedRoute";
 import { connect } from "react-redux";
 import mapStateToProps from "./redux/mapStateToProps";
@@ -44,8 +44,11 @@ class App extends React.Component {
           <ProtectedRoute
             exact
             path="/dashboard"
-            isAuthenticated={this.props.userState.isAuthenticated}
-            component={DashboardLayout}
+            isAuthenticated={true}
+            // revert below line
+            // isAuthenticated={this.props.userState.isAuthenticated}
+            component={DashboardRootController}
+            {...this.props}
           />
         </Switch>
       </BrowserRouter>
