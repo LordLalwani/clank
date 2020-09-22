@@ -51,18 +51,9 @@ const styles = (theme) => ({
 });
 
 class DashboardNavDrawer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      handleDrawerOpen: false,
-    };
-  }
   render() {
     const handleDrawerOpen = (e) => {
       e.preventDefault();
-      this.setState({
-        handleDrawerOpen: !this.state.handleDrawerOpen,
-      });
       this.props.toggleDrawer(!this.props.applicationState.drawerOpen);
     };
 
