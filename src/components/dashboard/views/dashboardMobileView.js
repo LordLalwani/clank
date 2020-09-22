@@ -6,7 +6,7 @@ class dashboardMobileView extends Component {
   render() {
     return (
       <div style={{ display: "flex" }}>
-        <DashboardNavController isMobile={true} />
+        <DashboardNavController isMobile={true} {...this.props} />
         <DashboardController />
       </div>
     );

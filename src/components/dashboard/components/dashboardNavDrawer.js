@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -15,15 +16,23 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
 
-const drawerWidth = 240;
+const drawerWidth = 175;
 
 const styles = (theme) => ({
   root: {
     display: "flex",
   },
   appBar: {
+    width: `100%`,
+    marginLeft: drawerWidth,
+  },
+  appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   drawer: {
     width: drawerWidth,
@@ -54,14 +63,19 @@ class DashboardNavDrawer extends React.Component {
       this.setState({
         handleDrawerOpen: !this.state.handleDrawerOpen,
       });
-      //send to redux
+      this.props.toggleDrawer(!this.props.applicationState.drawerOpen);
     };
 
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: this.props.applicationState?.drawerOpen,
+          })}
+        >
           <Toolbar>
             <div hidden={!this.props.isMobile}>
               <IconButton
@@ -80,11 +94,12 @@ class DashboardNavDrawer extends React.Component {
         </AppBar>
         <Drawer
           className={classes.drawer}
-          variant="permanent"
+          variant="persistent"
+          anchor="left"
+          open={this.props.applicationState?.drawerOpen}
           classes={{
             paper: classes.drawerPaper,
           }}
-          anchor="left"
         >
           <div className={classes.toolbar} />
           <Divider />

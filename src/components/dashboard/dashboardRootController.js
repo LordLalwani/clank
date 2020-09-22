@@ -4,14 +4,13 @@ import DashboardBrowserView from "./views/dashboardBrowserView";
 import DashboardMobileView from "./views/dashboardMobileView";
 export default class DashboardRootController extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <BrowserView>
-          <DashboardBrowserView />
+          <DashboardBrowserView {...this.props} />
         </BrowserView>
         <MobileView>
-          <DashboardMobileView />
+          <DashboardMobileView {...this.props} />
         </MobileView>
       </div>
     );
