@@ -6,8 +6,15 @@ import DashboardNavController from "../components/dashboardNavController";
 afterEach(cleanup);
 
 describe("render tests", () => {
-  it("should render signIn component correctly", () => {
-    const tree = renderer.create(<DashboardNavController />).toJSON();
+  it("should render DashboardNavController component correctly", () => {
+    const props = {
+      applicationState: {
+        drawerOpen: jest.fn(),
+      },
+    };
+    const tree = renderer
+      .create(<DashboardNavController {...props} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

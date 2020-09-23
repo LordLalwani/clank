@@ -6,8 +6,13 @@ import DashboardLayout from "../dashboardRootController";
 afterEach(cleanup);
 
 describe("render tests", () => {
-  it("should render signIn component correctly", () => {
-    const tree = renderer.create(<DashboardLayout />).toJSON();
+  it("should render DashboardLayout component correctly", () => {
+    const props = {
+      applicationState: {
+        drawerOpen: jest.fn(),
+      },
+    };
+    const tree = renderer.create(<DashboardLayout {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render tests should render signIn component correctly 1`] = `
+exports[`render tests should render Dashboard component correctly 1`] = `
 <div
   className="sc-bdnylx dxBFCn"
 >

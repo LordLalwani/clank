@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render tests should render signIn component correctly 1`] = `
+exports[`render tests should render DashboardLayout component correctly 1`] = `
 <div>
   <div>
     <div
@@ -21,7 +21,7 @@ exports[`render tests should render signIn component correctly 1`] = `
           className="DashboardNavDrawer-root-1"
         >
           <header
-            className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary DashboardNavDrawer-appBar-2 mui-fixed MuiPaper-elevation4"
+            className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary DashboardNavDrawer-appBar-2 DashboardNavDrawer-appBarShift-3 mui-fixed MuiPaper-elevation4"
           >
             <div
               className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
@@ -58,7 +58,7 @@ exports[`render tests should render signIn component correctly 1`] = `
                       viewBox="0 0 24 24"
                     >
                       <path
-                        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                        d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
                       />
                     </svg>
                   </span>
@@ -78,7 +78,7 @@ exports[`render tests should render signIn component correctly 1`] = `
               className="MuiPaper-root MuiDrawer-paper DashboardNavDrawer-drawerPaper-5 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
               style={
                 Object {
-                  "visibility": "hidden",
+                  "visibility": undefined,
                 }
               }
             >
