@@ -119,7 +119,7 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                Inbox
+                Dashboard
               </span>
             </div>
           </div>
@@ -160,7 +160,7 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                Starred
+                Invest
               </span>
             </div>
           </div>
@@ -201,7 +201,7 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                Send email
+                Trade
               </span>
             </div>
           </div>
@@ -242,17 +242,17 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                Drafts
+                Community
               </span>
             </div>
           </div>
         </ul>
-        <hr
-          className="MuiDivider-root"
-        />
         <ul
-          className="MuiList-root MuiList-padding"
+          className="MuiList-root DashboardNavDrawer-listBottom-8 MuiList-padding"
         >
+          <hr
+            className="MuiDivider-root"
+          />
           <div
             aria-disabled={false}
             className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
@@ -290,7 +290,7 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                All mail
+                Settings
               </span>
             </div>
           </div>
@@ -331,48 +331,7 @@ exports[`render tests should render DashboardNavController component correctly 1
               <span
                 className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                Trash
-              </span>
-            </div>
-          </div>
-          <div
-            aria-disabled={false}
-            className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
-            onBlur={[Function]}
-            onDragLeave={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            role="button"
-            tabIndex={0}
-          >
-            <div
-              className="MuiListItemIcon-root"
-            >
-              <svg
-                aria-hidden={true}
-                className="MuiSvgIcon-root"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 3H4.99c-1.11 0-1.98.9-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10zm-3-5h-2V7h-4v3H8l4 4 4-4z"
-                />
-              </svg>
-            </div>
-            <div
-              className="MuiListItemText-root"
-            >
-              <span
-                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
-              >
-                Spam
+                Logout
               </span>
             </div>
           </div>
