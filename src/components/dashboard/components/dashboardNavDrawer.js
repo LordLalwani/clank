@@ -15,6 +15,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 
 const drawerWidth = 175;
 
@@ -75,7 +76,11 @@ class DashboardNavDrawer extends React.Component {
                 onClick={(e) => handleDrawerOpen(e)}
                 edge="start"
               >
-                <MenuIcon />
+                {this.props.applicationState.drawerOpen ? (
+                  <ChevronLeftIcon />
+                ) : (
+                  <MenuIcon />
+                )}
               </IconButton>
             </div>
             <Typography variant="h6" noWrap>
