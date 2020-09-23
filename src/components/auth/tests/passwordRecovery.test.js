@@ -33,7 +33,7 @@ describe("render tests", () => {
     expect(emailButton).toBeTruthy();
   });
 
-  it("should render signIn component correctly", () => {
+  it("should render PasswordRecovery component correctly", () => {
     const tree = renderer.create(<PasswordRecovery />).toJSON();
     expect(tree).toMatchSnapshot();
   });
