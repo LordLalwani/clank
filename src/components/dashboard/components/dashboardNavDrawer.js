@@ -46,6 +46,9 @@ const styles = (theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  paperAnchorDockedLeft: {
+    borderRight: "0px",
+  },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   content: {
@@ -65,6 +68,11 @@ class DashboardNavDrawer extends React.Component {
     const handleDrawerOpen = (e) => {
       e.preventDefault();
       this.props.toggleDrawer(!this.props.applicationState.drawerOpen);
+    };
+
+    const setDashboardContext = (e, context) => {
+      e.preventDefault();
+      this.props.setDashboardContext(context);
     };
 
     const { classes } = this.props;
@@ -93,9 +101,10 @@ class DashboardNavDrawer extends React.Component {
               </IconButton>
             </div>
             <Typography variant="h6" noWrap>
-              Permanent drawer
+              {this.props.applicationState.dashboardContext}
             </Typography>
           </Toolbar>
+          <Divider variant="middle" light={true} />
         </AppBar>
         <Drawer
           className={classes.drawer}
@@ -104,14 +113,19 @@ class DashboardNavDrawer extends React.Component {
           open={this.props.applicationState?.drawerOpen}
           classes={{
             paper: classes.drawerPaper,
+            paperAnchorDockedLeft: classes.paperAnchorDockedLeft,
           }}
         >
           <div className={classes.toolbar} />
-          <Divider />
+          <Divider variant="middle" light={true} />
           <List>
             {["Dashboard", "Invest", "Wallet", "Community"].map(
               (text, index) => (
-                <ListItem button key={text}>
+                <ListItem
+                  button
+                  key={text}
+                  onClick={(e) => setDashboardContext(e, text)}
+                >
                   <ListItemIcon>
                     {index === 0 ? <DashboardIcon /> : null}
                     {index === 1 ? <ShowChartIcon /> : null}
@@ -124,9 +138,13 @@ class DashboardNavDrawer extends React.Component {
             )}
           </List>
           <List className={classes.listBottom}>
-            <Divider />
+            <Divider variant="middle" light={true} />
             {["Settings", "Logout"].map((text, index) => (
-              <ListItem button key={text}>
+              <ListItem
+                button
+                key={text}
+                onClick={(e) => setDashboardContext(e, text)}
+              >
                 <ListItemIcon>
                   {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}
                 </ListItemIcon>
