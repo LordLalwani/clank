@@ -1,21 +1,25 @@
-import React from "react";
-import clsx from "clsx";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import { withStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import MenuIcon from "@material-ui/icons/Menu";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ShowChartIcon from "@material-ui/icons/ShowChart";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+import clsx from "clsx";
+import React from "react";
 
 const drawerWidth = 200;
 
@@ -105,11 +109,14 @@ class DashboardNavDrawer extends React.Component {
           <div className={classes.toolbar} />
           <Divider />
           <List>
-            {["Dashboard", "Invest", "Trade", "Community"].map(
+            {["Dashboard", "Invest", "Wallet", "Community"].map(
               (text, index) => (
                 <ListItem button key={text}>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {index === 0 ? <DashboardIcon /> : null}
+                    {index === 1 ? <ShowChartIcon /> : null}
+                    {index === 2 ? <AccountBalanceWalletIcon /> : null}
+                    {index === 3 ? <SupervisedUserCircleIcon /> : null}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItem>
@@ -121,7 +128,7 @@ class DashboardNavDrawer extends React.Component {
             {["Settings", "Logout"].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
