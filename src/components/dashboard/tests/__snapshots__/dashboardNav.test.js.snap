@@ -55,19 +55,20 @@ exports[`render tests should render DashboardNavController component correctly 1
             </span>
           </button>
         </div>
-        <h6
-          className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap"
-        />
+        <div
+          className="DashboardNavDrawer-menuContext-7"
+        >
+          <h6
+            className="MuiTypography-root DashboardNavDrawer-menuContextHeader-6 MuiTypography-h6 MuiTypography-noWrap"
+          />
+        </div>
       </div>
-      <hr
-        className="MuiDivider-root MuiDivider-middle MuiDivider-light"
-      />
     </header>
     <div
       className="MuiDrawer-root MuiDrawer-docked DashboardNavDrawer-drawer-4"
     >
       <div
-        className="MuiPaper-root MuiDrawer-paper DashboardNavDrawer-drawerPaper-5 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft DashboardNavDrawer-paperAnchorDockedLeft-6 MuiPaper-elevation0"
+        className="MuiPaper-root MuiDrawer-paper DashboardNavDrawer-drawerPaper-5 MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft DashboardNavDrawer-paperAnchorDockedLeft-8 MuiPaper-elevation0"
         style={
           Object {
             "visibility": undefined,
@@ -75,7 +76,7 @@ exports[`render tests should render DashboardNavController component correctly 1
         }
       >
         <div
-          className="DashboardNavDrawer-toolbar-7"
+          className="DashboardNavDrawer-toolbar-9"
         />
         <hr
           className="MuiDivider-root MuiDivider-middle MuiDivider-light"
@@ -253,7 +254,7 @@ exports[`render tests should render DashboardNavController component correctly 1
           </div>
         </ul>
         <ul
-          className="MuiList-root DashboardNavDrawer-listBottom-9 MuiList-padding"
+          className="MuiList-root DashboardNavDrawer-listBottom-11 MuiList-padding"
         >
           <hr
             className="MuiDivider-root MuiDivider-middle MuiDivider-light"
