@@ -46,6 +46,14 @@ const styles = (theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  menuContextHeader: {
+    marginLeft: "0.5rem",
+  },
+  menuContext: {
+    margin: " 0 auto",
+    alignItems: "center",
+    display: "flex",
+  },
   paperAnchorDockedLeft: {
     borderRight: "0px",
   },
@@ -75,6 +83,29 @@ class DashboardNavDrawer extends React.Component {
       this.props.setDashboardContext(context);
     };
 
+    const getDashboardContextIcon = () => {
+      switch (this.props.applicationState.dashboardContext) {
+        case "Dashboard": {
+          return <DashboardIcon />;
+        }
+        case "Invest": {
+          return <ShowChartIcon />;
+        }
+        case "Wallet": {
+          return <AccountBalanceWalletIcon />;
+        }
+        case "Community": {
+          return <SupervisedUserCircleIcon />;
+        }
+        case "Settings": {
+          return <SettingsIcon />;
+        }
+        case "Logout": {
+          return <ExitToAppIcon />;
+        }
+      }
+    };
+
     const { classes } = this.props;
     return (
       <div className={classes.root}>
@@ -100,11 +131,17 @@ class DashboardNavDrawer extends React.Component {
                 )}
               </IconButton>
             </div>
-            <Typography variant="h6" noWrap>
-              {this.props.applicationState.dashboardContext}
-            </Typography>
+            <div className={classes.menuContext}>
+              {getDashboardContextIcon()}
+              <Typography
+                variant="h6"
+                noWrap
+                className={classes.menuContextHeader}
+              >
+                {this.props.applicationState.dashboardContext}
+              </Typography>
+            </div>
           </Toolbar>
-          <Divider variant="middle" light={true} />
         </AppBar>
         <Drawer
           className={classes.drawer}
