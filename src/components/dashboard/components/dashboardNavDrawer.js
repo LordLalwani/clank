@@ -18,6 +18,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ShowChartIcon from "@material-ui/icons/ShowChart";
 import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+import { getDashboardContextIcon } from "../utils/dashboardUtils";
 import clsx from "clsx";
 import React from "react";
 
@@ -73,58 +74,42 @@ const styles = (theme) => ({
 
 class DashboardNavDrawer extends React.Component {
   render() {
+    const {
+      classes,
+      applicationState,
+      isMobile,
+      toggleDrawer,
+      setDashboardContext,
+    } = this.props;
+
     const handleDrawerOpen = (e) => {
       e.preventDefault();
-      this.props.toggleDrawer(!this.props.applicationState.drawerOpen);
+      toggleDrawer(!applicationState.drawerOpen);
     };
 
-    const setDashboardContext = (e, context) => {
+    const ChangeDashboardContext = (e, context) => {
       e.preventDefault();
-      this.props.setDashboardContext(context);
+      setDashboardContext(context);
     };
 
-    const getDashboardContextIcon = () => {
-      switch (this.props.applicationState.dashboardContext) {
-        case "Dashboard": {
-          return <DashboardIcon />;
-        }
-        case "Invest": {
-          return <ShowChartIcon />;
-        }
-        case "Wallet": {
-          return <AccountBalanceWalletIcon />;
-        }
-        case "Community": {
-          return <SupervisedUserCircleIcon />;
-        }
-        case "Settings": {
-          return <SettingsIcon />;
-        }
-        case "Logout": {
-          return <ExitToAppIcon />;
-        }
-      }
-    };
-
-    const { classes } = this.props;
     return (
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
           position="fixed"
           className={clsx(classes.appBar, {
-            [classes.appBarShift]: this.props.applicationState?.drawerOpen,
+            [classes.appBarShift]: applicationState?.drawerOpen,
           })}
         >
           <Toolbar>
-            <div hidden={!this.props.isMobile}>
+            <div hidden={!isMobile}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 onClick={(e) => handleDrawerOpen(e)}
                 edge="start"
               >
-                {this.props.applicationState.drawerOpen ? (
+                {applicationState.drawerOpen ? (
                   <ChevronLeftIcon />
                 ) : (
                   <MenuIcon />
@@ -132,13 +117,13 @@ class DashboardNavDrawer extends React.Component {
               </IconButton>
             </div>
             <div className={classes.menuContext}>
-              {getDashboardContextIcon()}
+              {getDashboardContextIcon(applicationState.dashboardContext)}
               <Typography
                 variant="h6"
                 noWrap
                 className={classes.menuContextHeader}
               >
-                {this.props.applicationState.dashboardContext}
+                {applicationState.dashboardContext}
               </Typography>
             </div>
           </Toolbar>
@@ -147,7 +132,7 @@ class DashboardNavDrawer extends React.Component {
           className={classes.drawer}
           variant="persistent"
           anchor="left"
-          open={this.props.applicationState?.drawerOpen}
+          open={applicationState?.drawerOpen}
           classes={{
             paper: classes.drawerPaper,
             paperAnchorDockedLeft: classes.paperAnchorDockedLeft,
@@ -161,7 +146,7 @@ class DashboardNavDrawer extends React.Component {
                 <ListItem
                   button
                   key={text}
-                  onClick={(e) => setDashboardContext(e, text)}
+                  onClick={(e) => ChangeDashboardContext(e, text)}
                 >
                   <ListItemIcon>
                     {index === 0 ? <DashboardIcon /> : null}
@@ -180,7 +165,7 @@ class DashboardNavDrawer extends React.Component {
               <ListItem
                 button
                 key={text}
-                onClick={(e) => setDashboardContext(e, text)}
+                onClick={(e) => ChangeDashboardContext(e, text)}
               >
                 <ListItemIcon>
                   {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}
