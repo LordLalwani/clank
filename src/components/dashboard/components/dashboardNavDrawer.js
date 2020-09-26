@@ -70,6 +70,14 @@ const styles = (theme) => ({
     bottom: "0",
     width: "100%",
   },
+  onSelected: {
+    backgroundColor: "#e0efff!important",
+  },
+  rootListItem: {
+    "&:hover": {
+      backgroundColor: "#f9fcff",
+    },
+  },
 });
 
 class DashboardNavDrawer extends React.Component {
@@ -147,6 +155,11 @@ class DashboardNavDrawer extends React.Component {
                   button
                   key={text}
                   onClick={(e) => ChangeDashboardContext(e, text)}
+                  selected={text === applicationState.dashboardContext}
+                  classes={{
+                    root: classes.rootListItem,
+                    selected: classes.onSelected,
+                  }}
                 >
                   <ListItemIcon>
                     {index === 0 ? <DashboardIcon /> : null}
@@ -166,6 +179,11 @@ class DashboardNavDrawer extends React.Component {
                 button
                 key={text}
                 onClick={(e) => ChangeDashboardContext(e, text)}
+                selected={text === applicationState.dashboardContext}
+                classes={{
+                  root: classes.rootListItem,
+                  selected: classes.onSelected,
+                }}
               >
                 <ListItemIcon>
                   {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}

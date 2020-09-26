@@ -105,7 +105,7 @@ exports[`render tests should render DashboardRootController component correctly 
               >
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -147,7 +147,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -189,7 +189,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -231,7 +231,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -280,7 +280,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 />
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -323,7 +323,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -373,10 +373,10 @@ exports[`render tests should render DashboardRootController component correctly 
           className="sc-bdnylx dxBFCn"
         >
           <main
-            className="Dashboard-content-13"
+            className="Dashboard-content-15"
           >
             <div
-              className="Dashboard-toolbar-12"
+              className="Dashboard-toolbar-14"
             />
             <p
               className="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"
