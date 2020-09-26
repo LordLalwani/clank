@@ -1,5 +1,5 @@
 import { addUserToState } from "./slices/userSlice";
-import { toggleDrawer, setDashboardContext } from "./slices/ApplicationSlice";
+import { toggleDrawer, setDashboardContext } from "./slices/applicationSlice";
 
 // provides dispatch actions in props
 const mapDispatchToProps = (dispatch) => {
