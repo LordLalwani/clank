@@ -117,7 +117,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -159,7 +159,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -201,7 +201,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -243,7 +243,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -292,7 +292,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -335,7 +335,7 @@ exports[`render tests should render DashboardNavController component correctly 1
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root"
+                className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                 focusable="false"
                 viewBox="0 0 24 24"
               >

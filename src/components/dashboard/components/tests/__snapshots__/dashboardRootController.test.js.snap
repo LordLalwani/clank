@@ -126,7 +126,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -168,7 +168,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -210,7 +210,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -252,7 +252,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -301,7 +301,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -344,7 +344,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -373,10 +373,10 @@ exports[`render tests should render DashboardRootController component correctly 
           className="sc-bdnylx dxBFCn"
         >
           <main
-            className="Dashboard-content-15"
+            className="Dashboard-content-17"
           >
             <div
-              className="Dashboard-toolbar-14"
+              className="Dashboard-toolbar-16"
             />
             <p
               className="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"
