@@ -70,6 +70,22 @@ const styles = (theme) => ({
     bottom: "0",
     width: "100%",
   },
+  onSelected: {
+    backgroundColor: "#e0efff!important",
+    color: "#4050b5!important",
+  },
+  rootListItem: {
+    "&:hover": {
+      backgroundColor: "#f9fcff",
+    },
+    color: "darkgrey",
+  },
+  listItemIcon: {
+    color: "darkgrey",
+  },
+  listItemIconSelected: {
+    color: "#4050b5",
+  },
 });
 
 class DashboardNavDrawer extends React.Component {
@@ -147,12 +163,45 @@ class DashboardNavDrawer extends React.Component {
                   button
                   key={text}
                   onClick={(e) => ChangeDashboardContext(e, text)}
+                  selected={text === applicationState.dashboardContext}
+                  classes={{
+                    root: classes.rootListItem,
+                    selected: classes.onSelected,
+                  }}
                 >
                   <ListItemIcon>
-                    {index === 0 ? <DashboardIcon /> : null}
-                    {index === 1 ? <ShowChartIcon /> : null}
-                    {index === 2 ? <AccountBalanceWalletIcon /> : null}
-                    {index === 3 ? <SupervisedUserCircleIcon /> : null}
+                    {index === 0 ? (
+                      <DashboardIcon
+                        className={clsx(classes.listItemIcon, {
+                          [classes.listItemIconSelected]:
+                            text === applicationState.dashboardContext,
+                        })}
+                      />
+                    ) : null}
+                    {index === 1 ? (
+                      <ShowChartIcon
+                        className={clsx(classes.listItemIcon, {
+                          [classes.listItemIconSelected]:
+                            text === applicationState.dashboardContext,
+                        })}
+                      />
+                    ) : null}
+                    {index === 2 ? (
+                      <AccountBalanceWalletIcon
+                        className={clsx(classes.listItemIcon, {
+                          [classes.listItemIconSelected]:
+                            text === applicationState.dashboardContext,
+                        })}
+                      />
+                    ) : null}
+                    {index === 3 ? (
+                      <SupervisedUserCircleIcon
+                        className={clsx(classes.listItemIcon, {
+                          [classes.listItemIconSelected]:
+                            text === applicationState.dashboardContext,
+                        })}
+                      />
+                    ) : null}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItem>
@@ -166,9 +215,28 @@ class DashboardNavDrawer extends React.Component {
                 button
                 key={text}
                 onClick={(e) => ChangeDashboardContext(e, text)}
+                selected={text === applicationState.dashboardContext}
+                classes={{
+                  root: classes.rootListItem,
+                  selected: classes.onSelected,
+                }}
               >
                 <ListItemIcon>
-                  {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}
+                  {index % 2 === 0 ? (
+                    <SettingsIcon
+                      className={clsx(classes.listItemIcon, {
+                        [classes.listItemIconSelected]:
+                          text === applicationState.dashboardContext,
+                      })}
+                    />
+                  ) : (
+                    <ExitToAppIcon
+                      className={clsx(classes.listItemIcon, {
+                        [classes.listItemIconSelected]:
+                          text === applicationState.dashboardContext,
+                      })}
+                    />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>

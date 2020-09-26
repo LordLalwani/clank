@@ -89,7 +89,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
       >
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -110,7 +110,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -131,7 +131,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
         </div>
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -152,7 +152,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -173,7 +173,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
         </div>
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -194,7 +194,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -215,7 +215,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
         </div>
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -236,7 +236,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -264,7 +264,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
         />
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -285,7 +285,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -307,7 +307,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
         </div>
         <div
           aria-disabled={false}
-          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+          className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
           onBlur={[Function]}
           onClick={[Function]}
           onDragLeave={[Function]}
@@ -328,7 +328,7 @@ exports[`render tests should render DashboardNavDrawer component correctly 1`] =
           >
             <svg
               aria-hidden={true}
-              className="MuiSvgIcon-root"
+              className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
               focusable="false"
               viewBox="0 0 24 24"
             >

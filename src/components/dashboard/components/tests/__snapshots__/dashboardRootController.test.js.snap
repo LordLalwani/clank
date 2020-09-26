@@ -105,7 +105,7 @@ exports[`render tests should render DashboardRootController component correctly 
               >
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -126,7 +126,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -147,7 +147,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -168,7 +168,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -189,7 +189,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -210,7 +210,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -231,7 +231,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -252,7 +252,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -280,7 +280,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 />
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -301,7 +301,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -323,7 +323,7 @@ exports[`render tests should render DashboardRootController component correctly 
                 </div>
                 <div
                   aria-disabled={false}
-                  className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button"
+                  className="MuiButtonBase-root MuiListItem-root DashboardNavDrawer-rootListItem-13 MuiListItem-gutters MuiListItem-button"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onDragLeave={[Function]}
@@ -344,7 +344,7 @@ exports[`render tests should render DashboardRootController component correctly 
                   >
                     <svg
                       aria-hidden={true}
-                      className="MuiSvgIcon-root"
+                      className="MuiSvgIcon-root DashboardNavDrawer-listItemIcon-14"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -373,10 +373,10 @@ exports[`render tests should render DashboardRootController component correctly 
           className="sc-bdnylx dxBFCn"
         >
           <main
-            className="Dashboard-content-13"
+            className="Dashboard-content-17"
           >
             <div
-              className="Dashboard-toolbar-12"
+              className="Dashboard-toolbar-16"
             />
             <p
               className="MuiTypography-root MuiTypography-body1 MuiTypography-paragraph"
