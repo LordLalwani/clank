@@ -4,13 +4,14 @@ export const applicationSlice = createSlice({
   name: "applicationSlice",
   initialState: {
     drawerOpen: true,
-    dashboardContext: "Dashboard",
+    dashboardContext: localStorage.getItem("lastKnownContext") || "Dashboard",
   },
   reducers: {
     toggleDrawer: (state, action) => {
       state.drawerOpen = action.payload;
     },
     setDashboardContext: (state, action) => {
+      localStorage.setItem("lastKnownContext", action.payload);
       state.dashboardContext = action.payload;
     },
   },
