@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render tests should render DashboardLayout component correctly 1`] = `
+exports[`render tests should render DashboardRootController component correctly 1`] = `
 <div>
   <div>
     <div

@@ -1,16 +1,16 @@
 /* src/App.js */
 import Amplify from "aws-amplify";
 import React from "react";
+import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import awsExports from "./aws-exports";
 import PasswordRecovery from "./components/auth/passwordRecovery";
 import SignIn from "./components/auth/signIn";
 import SignUp from "./components/auth/signUp";
-import awsExports from "./aws-exports";
-import DashboardRootController from "./components/dashboard/dashboardRootController";
-import ProtectedRoute from "./utils/protectedRoute";
-import { connect } from "react-redux";
-import mapStateToProps from "./redux/mapStateToProps";
+import DashboardRootController from "./components/dashboard/components/dashboardRootController";
 import mapDispatchToProps from "./redux/mapDispatchToProps";
+import mapStateToProps from "./redux/mapStateToProps";
+import ProtectedRoute from "./utils/protectedRoute";
 
 Amplify.configure(awsExports);
 
