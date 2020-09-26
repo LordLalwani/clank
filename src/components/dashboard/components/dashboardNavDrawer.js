@@ -18,6 +18,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ShowChartIcon from "@material-ui/icons/ShowChart";
 import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
+import { getDashboardContextIcon } from "../utils/dashboardUtils";
 import clsx from "clsx";
 import React from "react";
 
@@ -46,6 +47,17 @@ const styles = (theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
+  menuContextHeader: {
+    marginLeft: "0.5rem",
+  },
+  menuContext: {
+    margin: " 0 auto",
+    alignItems: "center",
+    display: "flex",
+  },
+  paperAnchorDockedLeft: {
+    borderRight: "0px",
+  },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   content: {
@@ -62,56 +74,80 @@ const styles = (theme) => ({
 
 class DashboardNavDrawer extends React.Component {
   render() {
+    const {
+      classes,
+      applicationState,
+      isMobile,
+      toggleDrawer,
+      setDashboardContext,
+    } = this.props;
+
     const handleDrawerOpen = (e) => {
       e.preventDefault();
-      this.props.toggleDrawer(!this.props.applicationState.drawerOpen);
+      toggleDrawer(!applicationState.drawerOpen);
     };
 
-    const { classes } = this.props;
+    const ChangeDashboardContext = (e, context) => {
+      e.preventDefault();
+      setDashboardContext(context);
+    };
+
     return (
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
           position="fixed"
           className={clsx(classes.appBar, {
-            [classes.appBarShift]: this.props.applicationState?.drawerOpen,
+            [classes.appBarShift]: applicationState?.drawerOpen,
           })}
         >
           <Toolbar>
-            <div hidden={!this.props.isMobile}>
+            <div hidden={!isMobile}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
                 onClick={(e) => handleDrawerOpen(e)}
                 edge="start"
               >
-                {this.props.applicationState.drawerOpen ? (
+                {applicationState.drawerOpen ? (
                   <ChevronLeftIcon />
                 ) : (
                   <MenuIcon />
                 )}
               </IconButton>
             </div>
-            <Typography variant="h6" noWrap>
-              Permanent drawer
-            </Typography>
+            <div className={classes.menuContext}>
+              {getDashboardContextIcon(applicationState.dashboardContext)}
+              <Typography
+                variant="h6"
+                noWrap
+                className={classes.menuContextHeader}
+              >
+                {applicationState.dashboardContext}
+              </Typography>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer
           className={classes.drawer}
           variant="persistent"
           anchor="left"
-          open={this.props.applicationState?.drawerOpen}
+          open={applicationState?.drawerOpen}
           classes={{
             paper: classes.drawerPaper,
+            paperAnchorDockedLeft: classes.paperAnchorDockedLeft,
           }}
         >
           <div className={classes.toolbar} />
-          <Divider />
+          <Divider variant="middle" light={true} />
           <List>
             {["Dashboard", "Invest", "Wallet", "Community"].map(
               (text, index) => (
-                <ListItem button key={text}>
+                <ListItem
+                  button
+                  key={text}
+                  onClick={(e) => ChangeDashboardContext(e, text)}
+                >
                   <ListItemIcon>
                     {index === 0 ? <DashboardIcon /> : null}
                     {index === 1 ? <ShowChartIcon /> : null}
@@ -124,9 +160,13 @@ class DashboardNavDrawer extends React.Component {
             )}
           </List>
           <List className={classes.listBottom}>
-            <Divider />
+            <Divider variant="middle" light={true} />
             {["Settings", "Logout"].map((text, index) => (
-              <ListItem button key={text}>
+              <ListItem
+                button
+                key={text}
+                onClick={(e) => ChangeDashboardContext(e, text)}
+              >
                 <ListItemIcon>
                   {index % 2 === 0 ? <SettingsIcon /> : <ExitToAppIcon />}
                 </ListItemIcon>
