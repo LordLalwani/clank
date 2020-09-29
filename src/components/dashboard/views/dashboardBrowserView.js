@@ -7,7 +7,7 @@ class dashboardBrowserView extends Component {
     return (
       <div style={{ display: "flex", height: "100vh" }}>
         <DashboardNavController {...this.props} />
-        <DashboardController />
+        <DashboardController {...this.props} />
       </div>
     );
   }

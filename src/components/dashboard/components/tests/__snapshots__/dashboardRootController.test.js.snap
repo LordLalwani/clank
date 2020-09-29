@@ -382,6 +382,9 @@ exports[`render tests should render DashboardRootController component correctly 
           <div
             className="Dashboard-toolbar-16"
           />
+          <p>
+            dashboard
+          </p>
         </main>
       </div>
     </div>

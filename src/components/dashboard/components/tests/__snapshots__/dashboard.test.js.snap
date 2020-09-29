@@ -7,5 +7,8 @@ exports[`render tests should render Dashboard component correctly 1`] = `
   <div
     className="Dashboard-toolbar-1"
   />
+  <p>
+    dashboard
+  </p>
 </main>
 `;

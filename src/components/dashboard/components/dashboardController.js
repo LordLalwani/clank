@@ -5,7 +5,7 @@ export default class DashboardController extends React.Component {
   render() {
     return (
       <div style={{ width: "100vw" }}>
-        <Dashboard />
+        <Dashboard {...this.props} />
       </div>
     );
   }
