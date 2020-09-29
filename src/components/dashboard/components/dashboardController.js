@@ -4,7 +4,7 @@ import Dashboard from "./dashboard";
 export default class DashboardController extends React.Component {
   render() {
     return (
-      <div>
+      <div style={{ width: "100vw" }}>
         <Dashboard />
       </div>
     );

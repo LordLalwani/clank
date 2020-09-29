@@ -5,7 +5,7 @@ import DashboardNavController from "../components/dashboardNavController";
 class dashboardMobileView extends Component {
   render() {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", height: "100vh" }}>
         <DashboardNavController isMobile={true} {...this.props} />
         <DashboardController />
       </div>
