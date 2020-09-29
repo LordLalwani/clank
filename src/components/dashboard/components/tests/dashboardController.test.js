@@ -7,7 +7,12 @@ afterEach(cleanup);
 
 describe("render tests", () => {
   it("should render DashboardController component correctly", () => {
-    const tree = renderer.create(<DashboardController />).toJSON();
+    const props = {
+      applicationState: {
+        dashboardContext: "dashboard",
+      },
+    };
+    const tree = renderer.create(<DashboardController {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

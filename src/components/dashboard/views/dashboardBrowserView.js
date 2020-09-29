@@ -5,9 +5,9 @@ import DashboardNavController from "../components/dashboardNavController";
 class dashboardBrowserView extends Component {
   render() {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", height: "100vh" }}>
         <DashboardNavController {...this.props} />
-        <DashboardController />
+        <DashboardController {...this.props} />
       </div>
     );
   }
